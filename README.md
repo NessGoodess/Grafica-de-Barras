@@ -1,1 +1,3 @@
-![Gráfica del sistema](assets/Resultado.png)
+![Grafica a realizar](assets/image.png)
+
+![Resultado](assets/Resultado.png)
