@@ -2,11 +2,11 @@
 
 🧊 Proyecto de gráfico de barras comenzado en clases
 
-## Imagen de referencis
+## Imagen de referencia
 
 ![Grafica a realizar](assets/image.png)
 
-## Resultado ✨
+## ✨Resultado 
 
 ![Resultado](assets/Resultado.png)
 
