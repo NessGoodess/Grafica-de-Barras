@@ -6,9 +6,9 @@
 
 ![Grafica a realizar](assets/image.png)
 
-##Resultado ✨
-![Resultado](assets/Resultado.png)
+## Resultado ✨
 
+![Resultado](assets/Resultado.png)
 
 ##🛠️ Tecnologías
   ⚙️ TypeScript
