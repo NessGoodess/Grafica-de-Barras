@@ -10,6 +10,7 @@
 
 ![Resultado](assets/Resultado.png)
 
-##🛠️ Tecnologías
+## 🛠️ Tecnologías
+
   ⚙️ TypeScript
   🎨 Canvas API
