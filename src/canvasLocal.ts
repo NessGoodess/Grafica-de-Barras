@@ -10,10 +10,9 @@ export class CanvasLocal {
   protected centerX: number;
   protected centerY: number;
 
-
   public constructor(g: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
     this.graphics = g;
-    this.rWidth = 12;
+    this.rWidth = 15;
     this.rHeight = 8;
     this.maxX = canvas.width - 1
     this.maxY = canvas.height - 1;
@@ -78,6 +77,16 @@ export class CanvasLocal {
   }
   barra(x: number, y: number, alt: number, color: string): void {
 
+    //somnbra
+    this.graphics.fillStyle = 'rgba(0, 0, 0, 0.15)';
+    this.graphics.beginPath();
+    this.graphics.moveTo(this.iX(x - 1.2), this.iY(0.5));
+    this.graphics.lineTo(this.iX(x - 0.5), this.iY(0.2));
+    this.graphics.lineTo(this.iX(x), this.iY(0.4));
+    this.graphics.lineTo(this.iX(x - 0.7), this.iY(0.7));
+    this.graphics.closePath();
+    this.graphics.fill();
+
     this.graphics.strokeStyle = 'rgba(0, 0, 0, 0.05)';
     this.drawLine(this.iX(x), this.iY(0), this.iX(x - 0.5), this.iY(0.2));
     this.drawLine(this.iX(x - 0.5), this.iY(0.2), this.iX(x - 0.5), this.iY(y + alt));
@@ -140,27 +149,32 @@ export class CanvasLocal {
     this.graphics.fill();
   }
 
-
   paint() {
-    //let h: number[] = [20, 100, 160, 420];
-    //let h: number[] = [1150, 1780, 860, 1260, 1500];
-    let porcent: number[] = [10, 30, 80, 50];
-    //let maxEsc: number;
-    let colors: string[] = ['deepSkyBlue', 'limeGreen', 'deepPink', 'orange'];
-  
-    /*maxEsc = this.maxH(h);
-    let i=0;
-    for(let x= 0; x < 8; x+=(8/(h.length*1)) ){
-      this.graphics.strokeStyle = colors[i%4];
-      if(i<h.length)
-        this.barra(x,0, h[i++]*(this.rHeight-2)/maxEsc);
-    }
-    i=0;
-    for (let x = 0; x < 8; x += (8/(h.length*1)) ){
-      this.graphics.strokeStyle = colors[i%4];
-      if(i<h.length)
-        this.graphics.strokeText(h[i++]+"", this.iX(x), this.iY(-0.5));
-    }*/
+     /*
+     const stepX = this.rWidth / 10; // Dividir el ancho en 10 pasos
+     const stepY = this.rHeight / 10; // Dividir la altura en 10 pasos
+ 
+     this.graphics.strokeStyle = 'black';
+     this.graphics.lineWidth = 0.5;
+ 
+     // Dibujar líneas verticales
+     for (let x = -this.rWidth / 2; x <= this.rWidth / 2; x += stepX) {
+       this.graphics.beginPath();
+       this.graphics.moveTo(this.iX(x + 9), this.iY(-this.rHeight / 2 + 3.3));
+       this.graphics.lineTo(this.iX(x), this.iY(this.rHeight / 2-2));
+       this.graphics.stroke();
+     }
+ 
+     // Dibujar líneas horizontales
+     for (let y = -this.rHeight / 2; y <= this.rHeight / 2; y += stepY) {
+       this.graphics.beginPath();
+       this.graphics.moveTo(this.iX(-this.rWidth / 2), this.iY(y + 6));
+       this.graphics.lineTo(this.iX(this.rWidth / 2 + 2), this.iY(y + 5));
+       this.graphics.stroke();
+     }*/
+    
+    let porcent: number[] = [10, 30, 80, 50, 60, 90, 20];
+    let colors: string[] = ['deepSkyBlue', 'limeGreen', 'deepPink', 'orange', 'yellow', 'red', 'purple'];
 
     for (let i = 0; i < porcent.length; i++) {
       let x = i * 2;
@@ -177,7 +191,6 @@ export class CanvasLocal {
     this.graphics.fillStyle = 'blue';
     this.graphics.font = "bold 18px Arial";
     this.graphics.fillText("Nestor Yescas Ramos", this.iX(0), this.iY(7));
-
 
   }
 
